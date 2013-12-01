@@ -1,0 +1,933 @@
+﻿/*#region misc */
+@font-face
+{
+    font-family: 'open_sansregular';
+    src: url('Fonts/opensans-regular-webfont.eot');
+    src: url('Fonts/opensans-regular-webfont.eot?#iefix') format('embedded-opentype'), url('Fonts/opensans-regular-webfont.woff') format('woff'), url('Fonts/opensans-regular-webfont.ttf') format('truetype'), url('Fonts/opensans-regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*
+{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-family: 'open_sansregular', Arial;
+}
+
+body
+{
+    height: 100%;
+    background-color: black;
+    cursor: progress;
+    overflow: hidden;
+}
+
+label
+{
+    font-size: 0.9em;
+    font-family: 'open_sansregular', Arial;
+    font-weight: 500;
+    text-transform: none;
+    color: black;
+    opacity: .9;
+}
+
+input:not([type=submit]):not([type=file]):not([type=checkbox])
+{
+    transition: all 0.8s;
+    -webkit-transition: all 0.3s;
+    font-family: 'open_sansregular', Arial;
+    outline: none;
+    padding: 3px 0px 3px 3px;
+    margin: 5px 1px 3px 0px;
+    border: 1px solid #cccccc;
+    -webkit-user-select: text;
+    -khtml-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
+    input:not([type=submit]):not([type=file]):not([type=checkbox]):focus
+    {
+        box-shadow: 0 0 5px #50bcfa;
+        padding: 3px 0px 3px 3px;
+        margin: 5px 1px 3px 0px;
+        border: 1px solid #50bcfa;
+    }
+
+input[type=submit], button
+{
+    font-size: 0.9em;
+    font-family: 'open_sansregular', Arial;
+    font-weight: lighter;
+    text-transform: uppercase;
+    padding: 8px 25px 8px 25px;
+    border: 1px solid #DDDDDD;
+    background-color: white;
+}
+
+input[type=checkbox]
+{
+    border: none;
+    width: 15px;
+    height: 15px;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    vertical-align: bottom;
+    position: relative;
+    top: -1px;
+    *overflow: hidden;
+}
+
+.clickSpan
+{
+    text-align: justify;
+    font-size: 0.9em;
+    font-family: 'open_sansregular', Arial;
+    font-weight: 500;
+    text-transform: none;
+    color: black;
+    opacity: .7;
+}
+
+    .clickSpan:hover
+    {
+        opacity: 1;
+    }
+
+    .clickSpan:active
+    {
+        color: #50bcfa;
+    }
+/*#endregion */
+
+
+/*#region regular */
+body.reg
+{
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
+    height: 1205px;
+    cursor: default;
+    background: rgb(17,17,17); /* Old browsers - apparently also IE9 */
+    /* IE10 Consumer Preview */
+    background-image: -ms-radial-gradient(center, circle farthest-corner, rgb(37,37,37) 0%, #000000 100%);
+    /* Mozilla Firefox */
+    background-image: -moz-radial-gradient(center, circle farthest-corner, rgb(37,37,37) 0%, #000000 100%);
+    /* Opera */
+    background-image: -o-radial-gradient(center, circle farthest-corner, rgb(37,37,37) 0%, #000000 100%);
+    /* Webkit (Safari/Chrome 10) */
+    background-image: -webkit-gradient(radial, center center, 0, center center, 506, color-stop(0, rgb(37,37,37)), color-stop(1, #000000));
+    /* Webkit (Chrome 11+) */
+    background-image: -webkit-radial-gradient(center, circle farthest-corner, rgb(37,37,37) 0%, #000000 100%);
+    /* W3C Markup, IE10 Release Preview */
+    background-image: radial-gradient(circle farthest-corner at center, rgb(37,37,37) 0%, #000000 100%);
+    margin: 0;
+}
+
+    body.reg hr
+    {
+        display: block;
+    }
+
+    body.reg a
+    {
+        display: inline;
+    }
+
+    body.reg #newS hr
+    {
+        margin-bottom: 40px;
+        margin-top: 40px;
+    }
+
+    body.reg b
+    {
+        text-transform: uppercase;
+    }
+
+    body.reg .twitter-follow-button, body.reg .fb-like, body.reg fb-root, body.reg #loggeduser
+    {
+        display: inline;
+    }
+
+    body.reg #header
+    {
+        width: 740px;
+        height: 155px;
+        background: url(images/head.png) center center no-repeat;
+        background-size: 100% 96%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 7px;
+        color: white;
+    }
+
+    body.reg #login
+    {
+        position: absolute;
+        top: 78px;
+        margin-left: 30px;
+        font-size: 18px;
+        font-family: 'open_sansregular', Arial;
+        text-transform: capitalize;
+    }
+
+        body.reg #login:hover
+        {
+            font-size: 20px;
+            top: 77px;
+            margin-left: 28px;
+        }
+
+        body.reg #login:active
+        {
+            color: #50bcfa;
+        }
+
+    body.reg #loginR
+    {
+        position: absolute;
+        top: 69px;
+        margin-left: 30px;
+        font-size: 15px;
+        font-family: 'open_sansregular', Arial;
+        text-transform: none;
+        font-weight: 600;
+        vertical-align: middle;
+        max-width: 200px;
+        overflow: hidden;
+        word-wrap: hyphenate;
+    }
+
+    body.reg #logout, body.reg #loggeduser, body.reg #apro
+    {
+        font-size: 12px;
+        font-family: 'open_sansregular', Arial;
+        font-weight: normal;
+        text-transform: lowercase;
+        color: white;
+        text-decoration: none;
+    }
+
+        body.reg #logout:hover, body.reg #loggeduser:hover, body.reg #apro:hover
+        {
+            text-decoration: underline;
+        }
+
+    body.reg #games
+    {
+        position: absolute;
+        top: 78px;
+        margin-left: 653px;
+        font-size: 18px;
+        font-family: 'open_sansregular', Arial;
+        text-transform: capitalize;
+    }
+
+        body.reg #games:hover
+        {
+            font-size: 20px;
+            top: 77px;
+            margin-left: 649px;
+        }
+
+        body.reg #games:active
+        {
+            color: #50bcfa;
+        }
+
+    body.reg #titleD
+    {
+        position: absolute;
+        width: 270px;
+        left: 50%;
+        margin-left: -134px;
+        top: -3px;
+        color: white;
+        font-size: 52px;
+        line-height: 42px;
+        letter-spacing: 4px;
+        font-family: 'open_sansregular', Arial;
+        cursor: default;
+    }
+
+    body.reg #blacky
+    {
+        position: absolute;
+        top: 200px;
+        width: 100%;
+        height: 793px;
+        background: black;
+        z-index: -21;
+        border-top: solid 1px rgba(255, 255, 255, 0.3);
+        border-bottom: solid 1px rgba(255, 255, 255, 0.3);
+    }
+
+    body.reg #bodyD
+    {
+        width: 739px;
+        height: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 80px;
+        background: rgb(240, 240, 240);
+        border: 1px solid rgb(0, 0, 0);
+        -webkit-box-shadow: inset 0 0 15px 5px #000000;
+        box-shadow: inset 0 0 15px 7px rgba(0,0,0,.6);
+        overflow: hidden;
+    }
+
+    body.reg .headline
+    {
+        text-align: center;
+        font-size: 1.3em;
+        font-family: 'open_sansregular', Arial;
+        font-weight: lighter;
+        text-decoration: underline;
+        text-transform: uppercase;
+    }
+
+    body.reg #wrap
+    {
+        height: 700px;
+        margin-left: 0;
+        text-align: justify;
+        font-size: 0.9em;
+        font-family: 'open_sansregular', Arial;
+        font-weight: lighter;
+        overflow: hidden;
+    }
+
+    body.reg .indie
+    {
+        float: left;
+        width: 590px;
+        padding: 0px 73px 0px 72px;
+        height: 100%;
+        border-left: solid 2px rgba(0, 0, 0, 1);
+        border-right: solid 2px rgba(0, 0, 0, 1);
+        text-align: justify;
+        font-size: 0.9em;
+        font-family: 'open_sansregular', Arial;
+        font-weight: lighter;
+        overflow-y: auto;
+        word-wrap: normal;
+        display: block;
+    }
+
+    body.reg #menu
+    {
+        width: 200px;
+        text-align: center;
+        position: absolute;
+        word-spacing: 5px;
+        left: 50%;
+        margin-left: -100px;
+        top: 260px;
+        text-align: justify;
+        font-size: 0.75em;
+        font-family: 'open_sansregular', Arial;
+        font-weight: lighter;
+        text-transform: uppercase;
+        color: rgba(0,0,0,0.7);
+    }
+
+    body.reg .menuC
+    {
+        opacity: 0.8;
+    }
+
+        body.reg .menuC:hover
+        {
+            text-shadow: 0px 0px 10px #50bcfa;
+            opacity: 1;
+        }
+
+    body.reg .arrow
+    {
+        position: absolute;
+        top: 500px;
+        left: 50%;
+        margin-left: -460px;
+        width: 70px;
+        height: 90px;
+        background: url(images/arrow1.png) 50% 50% no-repeat;
+        background-size: 100% 100%;
+        opacity: 1;
+        cursor: pointer;
+    }
+
+        body.reg .arrow:hover
+        {
+            opacity: 1;
+            background-image: url(images/arrow.png);
+        }
+
+        body.reg .arrow:active
+        {
+            background-size: 103% 103%;
+        }
+
+    body.reg #a1
+    {
+        margin-left: -470px;
+    }
+
+    body.reg #a2
+    {
+        margin-left: 400px;
+        -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+    }
+
+    body.reg #progressWrap
+    {
+        display: none;
+    }
+
+    body.reg #extraFoot
+    {
+        border-top: solid 1px rgba(255, 255, 255, 0.3);
+        border-bottom: solid 1px rgba(255, 255, 255, 0.3);
+        background: rgb(10,10,10) url(images/stripe.png) repeat;
+        width: 100%;
+        margin-left: 0px;
+        left: 0px;
+        height: 100px;
+        position: absolute;
+        top: 1200px;
+        opacity: .8;
+        text-align: center;
+        color: white;
+        font-size: 0.9em;
+    }
+/*#endregion */
+
+
+
+/*#region nothing opened */
+body.notlogreg
+{
+}
+
+    body.notlogreg #container, body.notlogreg #logindiv, body.notlogreg #registerDiv, body.notlogreg #forgottenDiv, body.notlogreg #gamesDiv, body.notlogreg #ProfileDiv
+    {
+        display: none;
+    }
+/*#endregion */
+
+/*#region login */
+body.logn
+{
+}
+
+    body.logn #bgD
+    {
+        position: fixed;
+        margin-left: 0px;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.8);
+        z-index: 10000;
+    }
+
+    body.logn #container
+    {
+        display: normal;
+        position: fixed;
+        width: 450px;
+        height: 470px;
+        left: 50%;
+        margin-left: -225px;
+        margin-top: -250px;
+        top: 50%;
+        z-index: 10001;
+    }
+
+    body.logn #exit
+    {
+        margin-left: 440px;
+        margin-top: -8px;
+        position: absolute;
+    }
+
+    body.logn #back
+    {
+        width: 0;
+        height: 0;
+        display: none;
+    }
+
+    body.logn #logindiv
+    {
+        width: 0%;
+        height: 0%;
+        margin: auto;
+        background-color: rgb(240, 240, 240);
+        border: 1px solid rgb(0, 0, 0);
+        -webkit-box-shadow: inset 0 0 15px 5px rgba(0,0,0,.3);
+        box-shadow: inset 0 0 15px 7px rgba(0,0,0,.3);
+        overflow: hidden;
+        text-align: justify;
+        font-size: 0.9em;
+        font-family: 'open_sansregular', Arial;
+        font-weight: lighter;
+        text-transform: uppercase;
+        word-wrap: break-word;
+        word-break: break-all;
+    }
+
+    body.logn #rememberME
+    {
+        padding-left: 0px;
+        text-indent: -15px;
+        margin-top: 10px;
+    }
+
+    body.logn #registerDiv, body.logn #forgottenDiv, body.logn #gamesDiv, body.logn #ProfileDiv
+    {
+        display: none;
+    }
+/*#endregion */
+
+/*#region forgotPassword */
+body.forg
+{
+}
+
+    body.forg #bgD
+    {
+        position: fixed;
+        margin-left: 0px;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.8);
+        z-index: 10000;
+    }
+
+    body.forg #container
+    {
+        display: normal;
+        position: fixed;
+        width: 450px;
+        height: 413px;
+        left: 50%;
+        margin-left: -225px;
+        margin-top: -250px;
+        top: 50%;
+        z-index: 10001;
+    }
+
+    body.forg #exit
+    {
+        margin-left: 440px;
+        margin-top: -8px;
+        position: absolute;
+    }
+
+    body.forg #back
+    {
+        display: normal;
+        margin-left: 440px;
+        margin-top: 55px;
+        position: absolute;
+    }
+
+    body.forg #forgottenDiv
+    {
+        width: 0%;
+        height: 0%;
+        margin: auto;
+        background-color: rgb(240, 240, 240);
+        border: 1px solid rgb(0, 0, 0);
+        -webkit-box-shadow: inset 0 0 15px 5px rgba(0,0,0,.3);
+        box-shadow: inset 0 0 15px 7px rgba(0,0,0,.3);
+        overflow: hidden;
+        text-align: justify;
+        font-size: 0.9em;
+        font-family: 'open_sansregular', Arial;
+        font-weight: lighter;
+        text-transform: uppercase;
+        word-wrap: break-word;
+        word-break: break-all;
+    }
+
+    body.forg #registerDiv, body.forg #logindiv, body.forg #gamesDiv, body.forg #ProfileDiv
+    {
+        display: none;
+    }
+/*#endregion */
+
+/*#region register */
+body.regi
+{
+}
+
+    body.regi #bgD
+    {
+        position: fixed;
+        margin-left: 0px;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.8);
+        z-index: 10000;
+    }
+
+    body.regi #container
+    {
+        display: normal;
+        position: fixed;
+        width: 550px;
+        height: 620px;
+        left: 50%;
+        margin-left: -275px;
+        margin-top: -310px;
+        top: 50%;
+        z-index: 10001;
+    }
+
+    body.regi #exit
+    {
+        margin-left: 540px;
+        margin-top: -8px;
+        position: absolute;
+    }
+
+    body.regi #back
+    {
+        display: normal;
+        margin-left: 540px;
+        margin-top: 55px;
+        position: absolute;
+    }
+
+    body.regi #registerDiv
+    {
+        width: 0%;
+        height: 0%;
+        margin: auto;
+        background-color: rgb(240, 240, 240);
+        border: 1px solid rgb(0, 0, 0);
+        -webkit-box-shadow: inset 0 0 15px 5px rgba(0,0,0,.3);
+        box-shadow: inset 0 0 15px 7px rgba(0,0,0,.3);
+        overflow: hidden;
+        text-align: justify;
+        font-size: 0.9em;
+        font-family: 'open_sansregular', Arial;
+        font-weight: lighter;
+        text-transform: uppercase;
+        word-wrap: break-word;
+        word-break: break-all;
+    }
+
+    body.regi #logindiv, body.regi #forgottenDiv, body.regi #gamesDiv, body.regi #ProfileDiv
+    {
+        display: none;
+    }
+/*#endregion */
+
+/*#region profile */
+body.prof
+{
+}
+
+    body.prof #bgD
+    {
+        position: fixed;
+        margin-left: 0px;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.8);
+        z-index: 10000;
+    }
+
+    body.prof #container
+    {
+        display: normal;
+        position: fixed;
+        width: 550px;
+        height: 500px;
+        left: 50%;
+        top: 50%;
+        margin-left: -275px;
+        margin-top: -250px;
+        z-index: 10001;
+    }
+
+    body.prof #exit
+    {
+        margin-left: 540px;
+        margin-top: -8px;
+        position: absolute;
+    }
+
+    body.prof #back
+    {
+        display: none;
+    }
+
+    body.prof #ProfileDiv
+    {
+        width: 0%;
+        height: 0%;
+        margin: auto;
+        background-color: rgb(240, 240, 240);
+        border: 1px solid rgb(0, 0, 0);
+        -webkit-box-shadow: inset 0 0 15px 5px rgba(0,0,0,.3);
+        box-shadow: inset 0 0 15px 7px rgba(0,0,0,.3);
+        overflow: hidden;
+        text-align: justify;
+        font-size: 0.9em;
+        font-family: 'open_sansregular', Arial;
+        font-weight: lighter;
+        text-transform: uppercase;
+        word-wrap: break-word;
+        word-break: break-all;
+    }
+
+    body.prof table.proTable td:not(.proTd)
+    {
+        width: 105px;
+    }
+
+    body.prof .proTd
+    {
+        min-width: 150px;
+        overflow: hidden;
+    }
+
+    body.prof #logindiv, body.prof #registerDiv, body.prof #forgottenDiv, body.prof #gamesDiv
+    {
+        display: none;
+    }
+/*#endregion */
+
+/*#region Edit Profile */
+body.eProf
+{
+}
+
+    body.eProf #bgD
+    {
+        position: fixed;
+        margin-left: 0px;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.8);
+        z-index: 10000;
+    }
+
+    body.eProf #container
+    {
+        display: normal;
+        position: fixed;
+        width: 550px;
+        height: 500px;
+        left: 50%;
+        top: 50%;
+        margin-left: -275px;
+        margin-top: -250px;
+        z-index: 10001;
+    }
+
+    body.eProf #exit
+    {
+        margin-left: 540px;
+        margin-top: -8px;
+        position: absolute;
+    }
+
+    body.eProf #back
+    {
+        display: normal;
+        margin-left: 540px;
+        margin-top: 55px;
+        position: absolute;
+    }
+
+    body.eProf #ProfileDiv
+    {
+        width: 0%;
+        height: 0%;
+        margin: auto;
+        background-color: rgb(240, 240, 240);
+        border: 1px solid rgb(0, 0, 0);
+        -webkit-box-shadow: inset 0 0 15px 5px rgba(0,0,0,.3);
+        box-shadow: inset 0 0 15px 7px rgba(0,0,0,.3);
+        overflow: hidden;
+        font-size: 0.9em;
+        font-family: 'open_sansregular', Arial;
+        font-weight: lighter;
+        text-transform: uppercase;
+        word-wrap: break-word;
+        word-break: break-all;
+    }
+
+    body.eProf table.proTable td
+    {
+        padding-right: 15px;
+    }
+
+    body.eProf #logindiv, body.eProf #registerDiv, body.eProf #forgottenDiv, body.eProf #gamesDiv
+    {
+        display: none;
+    }
+/*#endregion */
+
+
+/*#region Games */
+body.dgames
+{
+}
+
+    body.dgames #bgD
+    {
+        position: fixed;
+        margin-left: 0px;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.8);
+        z-index: 10000;
+    }
+
+    body.dgames #container
+    {
+        display: normal;
+        position: absolute;
+        width: 700px;
+        height: 803px;
+        left: 50%;
+        margin-left: -350px;
+        top: 100px;
+        z-index: 10001;
+    }
+
+    body.dgames #exit
+    {
+        margin-left: 690px;
+        margin-top: -8px;
+        position: absolute;
+        z-index: 9999999999;
+    }
+
+    body.dgames #back
+    {
+        display: none;
+    }
+
+    body.dgames .gameBanner
+    {
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+        height: 197px;
+    }
+
+    body.dgames #gamesDiv
+    {
+        width: 0%;
+        height: 0%;
+        margin: auto;
+        background-color: rgb(240, 240, 240);
+        border: 2px solid rgb(0, 0, 0);
+        overflow: hidden;
+        text-align: justify;
+        font-size: 0.9em;
+        font-family: 'open_sansregular', Arial;
+        font-weight: lighter;
+        text-transform: none;
+        word-wrap: break-word;
+        word-break: break-all;
+    }
+
+    body.dgames #registerDiv, body.dgames #forgottenDiv, body.dgames #logindiv, body.dgames #ProfileDiv
+    {
+        display: none;
+    }
+/*#endregion */
+
+/*#region loading screen */
+body.loading
+{
+    height: 100%;
+    background-color: black;
+    cursor: progress;
+    overflow: hidden;
+}
+
+    body.loading hr, a, #loggeduser
+    {
+        display: none;
+    }
+
+    body.loading #progressWrap
+    {
+        border-radius: 5px;
+        display: block;
+        position: fixed;
+        z-index: 1000;
+        top: 45%;
+        left: 50%;
+        margin-left: -110px;
+        margin-top: 100px;
+        height: 10px;
+        width: 220px;
+        background: rgb(100, 100, 100);
+    }
+
+    body.loading #progressValue
+    {
+        border-radius: 5px;
+        margin-left: 0px;
+        display: block;
+        height: 100%;
+        width: 0%;
+        background: rgb(255, 255, 255);
+    }
+
+    body.loading #header
+    {
+        display: block;
+        position: fixed;
+        left: 50%;
+        margin-left: -400px;
+        top: 45%;
+        margin-top: -300px;
+        width: 800px;
+        height: 500px;
+        background-image: url(images/blackSmaller.jpg);
+        background-size: 200%;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+/*#endregion */
+
+.twitter-follow-button, .fb-like, fb-root
+{
+    display: none;
+}
